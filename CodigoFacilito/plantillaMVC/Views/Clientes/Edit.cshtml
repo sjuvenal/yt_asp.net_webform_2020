@@ -1,0 +1,259 @@
+﻿@model plantillaMVC.Models.Cliente
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Cliente</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ClienteId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RFC, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RFC, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RFC, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.TipoPersonSat, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TipoPersonSat, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TipoPersonSat, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.TipoPersonSat, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.TipoPersonSat, ViewData["list"] as SelectList, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.TipoPersonSat, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.TipoClienteId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.TipoClienteId, ViewData["tipos"] as SelectList, "--SELECIONE EL TIPO DE CLIENTE", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.TipoClienteId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+    </div>
+}
+
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                    Telefonos
+                </a>
+            </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+            <div class="panel-body">
+
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="Telefono">Telefono</label>
+                        <input type="text" id="Telefono" class="form-control" width="100" />
+                        <span class="error">El teléfono es requerido</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="Tipo">Tipo</label>
+                        <input type="text" id="Tipo" class="form-control" width="100" />
+                        <span class="error">El Tipo es requerido</span>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="TelPrincipal" value="1" class="form-control" /> Principal
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="button" id="add" value="Agregar" class="btn btn-primary form-control" />
+                    </div>
+                </form>
+
+                <br />
+                <div id="telItems" class="container">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseEmail">
+                    Dirección de correo electronico
+                </a>
+            </h4>
+        </div>
+        <div id="collapseEmail" class="panel-collapse collapse">
+            <div class="panel-body">
+
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="EmailDireccion">Dirección</label>
+                        <input type="text" id="EmailDireccion" class="form-control" width="100" />
+                        <span class="error">El Email es requerido</span>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="EmailPrincipal" value="1" class="form-control" /> Principal
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="button" id="addEmail" value="Agregar" class="btn btn-primary form-control" />
+                    </div>
+                </form>
+
+                <br />
+                <div id="emailItems" class="container">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseDirecciones">
+                    Direcciones
+                </a>
+            </h4>
+        </div>
+        <div id="collapseDirecciones" class="panel-collapse collapse">
+            <div class="panel-body">
+
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="DirCalle">Dirección</label>
+                        <input type="text" id="DirCalle" class="form-control" width="100" />
+                        <span class="error">El Dirección es requerido</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="DirNumExterior">NumExterior</label>
+                        <input type="text" id="DirNumExterior" class="form-control" width="100" />
+                        <span class="error">El NumExterior  es requerido</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="DirNumInterior">NumInterior</label>
+                        <input type="text" id="DirNumInterior" class="form-control" width="100" />
+                        <span class="error">El NumInterior es requerido</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="DirColonia">Colonia</label>
+                        <input type="text" id="DirColonia" class="form-control" width="100" />
+                        <span class="error">La Colonia es requerido</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="DirMunicipio">Municipio</label>
+                        <input type="text" id="DirMunicipio" class="form-control" width="100" />
+                        <span class="error">El Municipio es requerido</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="DirEstado">Estado</label>
+                        <input type="text" id="DirEstado" class="form-control" width="100" />
+                        <span class="error">El Estado es requerido</span>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="DirPrincipal" value="1" class="form-control" /> Principal
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="button" id="addDir" value="Agregar" class="btn btn-primary form-control" />
+                    </div>
+                </form>
+
+                <br />
+                <div id="dirItems" class="container">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="button" value="Modificar" class="btn btn-primary" id="modificarCliente" />
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="@Url.Content("~/Scripts/Listas.js")"></script>
+    <script src="@Url.Content("~/Scripts/FuncionesCliente.js")"></script>
+    <script>
+        function LlenarTelefonosDelModelo() {
+            @foreach (var d in Model.Telefonos) 
+            { 
+                @:telItems.Agregar(@Html.Raw(Json.Encode(d)));
+            }
+        }
+        function LlenarEmailDelModelo() {
+            @foreach (var d in Model.Correos) 
+            { 
+                @:emailItems.Agregar(@Html.Raw(Json.Encode(d)));
+            }
+        }
+
+        function LlenarDireccionesDelModelo() {
+            @foreach (var d in Model.Direcciones) 
+            { 
+                @:dirItems.Agregar(@Html.Raw(Json.Encode(d)));
+            }
+        }
+
+        $(document).ready(function () {
+
+            LlenarTelefonosDelModelo();
+            LlenarEmailDelModelo();
+            LlenarDireccionesDelModelo();
+
+            MostrarTelefonos(true);
+            MostrarEmail(true);
+            MostrarDir(true);
+
+            $('#add').click(addTel_Click);
+            $('#addEmail').click(addEmail_Click);
+            $('#addDir').click(addDir_Click);
+           $('#modificarCliente').click(modificar_Click);
+        })
+
+
+    </script>
+
+
+}
