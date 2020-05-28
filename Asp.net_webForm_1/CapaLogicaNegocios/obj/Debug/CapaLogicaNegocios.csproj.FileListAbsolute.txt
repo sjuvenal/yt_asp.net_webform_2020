@@ -1,0 +1,10 @@
+D:\Practica\Prueba\webForm2\CapaLogicaNegocios\bin\Debug\CapaLogicaNegocios.dll
+D:\Practica\Prueba\webForm2\CapaLogicaNegocios\bin\Debug\CapaLogicaNegocios.pdb
+D:\Practica\Prueba\webForm2\CapaLogicaNegocios\bin\Debug\CapaAccesoDatos.dll
+D:\Practica\Prueba\webForm2\CapaLogicaNegocios\bin\Debug\CapaEntidades.dll
+D:\Practica\Prueba\webForm2\CapaLogicaNegocios\bin\Debug\CapaAccesoDatos.pdb
+D:\Practica\Prueba\webForm2\CapaLogicaNegocios\bin\Debug\CapaEntidades.pdb
+D:\Practica\Prueba\webForm2\CapaLogicaNegocios\obj\Debug\CapaLogicaNegocios.csprojAssemblyReference.cache
+D:\Practica\Prueba\webForm2\CapaLogicaNegocios\obj\Debug\CapaLogicaNegocios.csproj.CopyComplete
+D:\Practica\Prueba\webForm2\CapaLogicaNegocios\obj\Debug\CapaLogicaNegocios.dll
+D:\Practica\Prueba\webForm2\CapaLogicaNegocios\obj\Debug\CapaLogicaNegocios.pdb

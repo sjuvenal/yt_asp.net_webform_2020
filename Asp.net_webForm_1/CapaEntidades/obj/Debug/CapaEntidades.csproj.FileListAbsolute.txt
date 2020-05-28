@@ -1,0 +1,5 @@
+D:\Practica\Prueba\webForm2\CapaEntidades\bin\Debug\CapaEntidades.dll
+D:\Practica\Prueba\webForm2\CapaEntidades\bin\Debug\CapaEntidades.pdb
+D:\Practica\Prueba\webForm2\CapaEntidades\obj\Debug\CapaEntidades.csprojAssemblyReference.cache
+D:\Practica\Prueba\webForm2\CapaEntidades\obj\Debug\CapaEntidades.dll
+D:\Practica\Prueba\webForm2\CapaEntidades\obj\Debug\CapaEntidades.pdb

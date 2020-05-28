@@ -1,0 +1,8 @@
+D:\Practica\Prueba\webForm2\CapaAccesoDatos\bin\Debug\CapaAccesoDatos.dll
+D:\Practica\Prueba\webForm2\CapaAccesoDatos\bin\Debug\CapaAccesoDatos.pdb
+D:\Practica\Prueba\webForm2\CapaAccesoDatos\bin\Debug\CapaEntidades.dll
+D:\Practica\Prueba\webForm2\CapaAccesoDatos\bin\Debug\CapaEntidades.pdb
+D:\Practica\Prueba\webForm2\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.csprojAssemblyReference.cache
+D:\Practica\Prueba\webForm2\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.csproj.CopyComplete
+D:\Practica\Prueba\webForm2\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.dll
+D:\Practica\Prueba\webForm2\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.pdb
